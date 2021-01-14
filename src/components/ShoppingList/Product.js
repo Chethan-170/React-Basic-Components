@@ -22,7 +22,7 @@ class Product extends Component {
                     </Column>
                     <Column className="col-3">
                         <button className="btn btn-sm btn-outline-primary" onClick={()=>this.props.onIncrement(this.props.product.id)}>Add</button>
-                        <button className="btn btn-sm btn-outline-danger ml-2" onClick={()=>this.props.onDelete}>Delete</button>
+                        <button className="btn btn-sm btn-outline-danger ml-2" onClick={()=>this.props.onDelete(this.props.product.id)}>Delete</button>
                     </Column>
                 </Row>
             </React.Fragment>

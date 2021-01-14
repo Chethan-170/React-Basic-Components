@@ -23,7 +23,7 @@ class Timer extends React.Component {
     }
     toggleTimerState(){
         this.setState((state,props)=>({
-            isStopped : !state.issStopped
+            isStopped : !state.isStopped
         })) 
     }
     stopTimer(){
@@ -39,22 +39,22 @@ class Timer extends React.Component {
     render() {
         return ( 
             <React.Fragment>
-                <div class="card text-center m-5">
-                    <div class="card-header font-weight-bold text-light bg-primary">
-                        Timer Component
+                <div className="card text-center">
+                    <div className="card-header font-weight-bold text-light bg-primary">
+                        {this.props.title}
                     </div>
-                    <div class="card-body">
+                    <div className="card-body">
                         {(this.state.isStopped)
                         ?
                         <React.Fragment>
-                            <h2>The Timer Stopped @ <span className="text-warning">{this.state.currentTime}</span> </h2>
+                            <h2>The Timer Stopped @ <span className="text-danger">{this.state.currentTime}</span> </h2>
                             </React.Fragment>
                         :
                         <React.Fragment>
-                            <h2>{this.props.title} : <span className="text-success">{this.state.currentTime}</span> </h2>
+                            <h2>The Timer Starts : <span className="text-success">{this.state.currentTime}</span> </h2>
                             </React.Fragment>
                         }</div>
-                    <div class="card-footer text-muted">                        
+                    <div className="card-footer text-muted">                        
                     {(this.state.isStopped)
                     ?
                         <button className="btn btn-md btn-outline-success" onClick={this.reStartTimer}>Resume</button>                       

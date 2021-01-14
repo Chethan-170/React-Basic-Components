@@ -39,12 +39,20 @@ class ShoppingList extends Component {
         })
     }
     handleDelete = (productID) =>{
-        console.log('incremented',productID)
-        /*const productList = this.state.productList.filter(product=> (product.id !== productID));
-        console.log(productList);
+        const productList = this.state.productList.filter(product=> (product.id !== productID));
         this.setState({
             productList 
-        })*/
+        })
+    }
+    handleReset = () =>{
+        const productList = this.state.productList.map(product =>{
+            product.quantity = 0
+            return product
+        })
+        this.setState({
+            productList 
+        })
+        console.log(this.state.productList)
     }
     render() { 
         return (
@@ -54,7 +62,8 @@ class ShoppingList extends Component {
                         {this.props.title}
                     </div>
                     <div className="card-body">
-                        <Row>
+                        <button className="btn btn-outline-warning float-right" onClick={this.handleReset}>Reset</button>
+                        <Row className="mt-3">
                             <Column className="col-3">
                                 ID
                             </Column>
@@ -71,6 +80,7 @@ class ShoppingList extends Component {
                         {this.state.productList.map(product=>{
                             return <Product key={product.id} product={product} onIncrement={this.handleIncrement} onDelete={this.handleDelete}/>
                         })}
+                        <h3 className="text-warning mt-3">{(this.state.productList.length===0)&&"No Products Found"}</h3>
                     </div>
                     <div className="card-footer text-muted">   
                     </div>
