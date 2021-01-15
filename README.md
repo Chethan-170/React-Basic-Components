@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Basic Modules
+### `Timer`
+### `Counter`
+### `Simple List with Add,Delete,Reset`
+
 ## Available Scripts
 
 In the project directory, you can run:
